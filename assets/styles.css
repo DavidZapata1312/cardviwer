@@ -15,7 +15,7 @@
 
 body {
   background-color: var(--lucario-blue);
-  /* No le ponemos padding-top porque nav no es fixed, es sticky */
+
 }
 
 img {
@@ -164,15 +164,15 @@ header {
   color: white;
   padding: 0.5rem 2rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  position: relative; /* no cambia nada, pero aclaramos */
-  z-index: 1100; /* más alto que nav para que quede encima */
+  position: relative; 
+  z-index: 1100; 
 }
 
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column; /* Logo arriba, nav abajo */
+  flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
 }
