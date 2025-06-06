@@ -1,38 +1,48 @@
+:root {
+  --lucario-blue: rgb(48, 80, 162);
+  --lucario-black: rgb(0, 0, 0);
+  --lucario-cream: rgb(243, 218, 133);
+  --lucario-red-eyes: rgb(255, 0, 0);
+  --lucario-dark-gray: rgb(50, 50, 50);
+  --lucario-shadow: rgba(0, 0, 0, 0.1);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
-    background-color: rgba(189, 235, 220, 0.884);
-    padding-top: 70px;
+
+body {
+  background-color: var(--lucario-blue);
+  /* No le ponemos padding-top porque nav no es fixed, es sticky */
 }
-img{
-    width: 10rem;
-    
+
+img {
+  width: 10rem;
 }
+
 .searcher {
   max-width: 500px;
   margin: 2rem auto;
   padding: 2rem;
-  background-color: #f9f9f9;
+  background-color: var(--lucario-dark-gray);
   border-radius: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px var(--lucario-shadow);
   font-family: 'Segoe UI', sans-serif;
   transition: all 0.3s ease-in-out;
-  background-color: rgba(231, 163, 231, 0.863);
 }
 
 .searcher h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color:    #000000;
+  color: #ffffff;
   text-align: center;
 }
 
 .searcher p {
   font-size: 1rem;
-  color: #555;
+  color: var(--lucario-cream);
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -45,7 +55,7 @@ img{
 
 .searcher label {
   font-weight: bold;
-  color: #444;
+  color: var(--lucario-cream);
   margin-bottom: 0.3rem;
 }
 
@@ -69,24 +79,24 @@ img{
     font-size: 0.95rem;
   }
 }
+
 .cards {
   max-width: 1000px;
   margin: 2rem auto;
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px var(--lucario-shadow);
   font-family: 'Segoe UI', sans-serif;
   transition: all 0.3s ease-in-out;
-  background-color: rgba(231, 163, 231, 0.863);
+  background-color: var(--lucario-cream);
 }
 
 .cards-title {
   text-align: center;
   margin-bottom: 1.5rem;
   font-size: 1.8rem;
-  color: #333;
+  color: var(--lucario-black);
 }
-
 
 .cards-container {
   display: grid;
@@ -94,11 +104,10 @@ img{
   gap: 1.5rem;
 }
 
-/* Cada "tarjeta" individual */
 .cards-container div {
-  background-color: rgb(224, 105, 199);
+  background-color: var(--lucario-blue);
   border-radius: 0.8rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 6px var(--lucario-shadow);
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -113,7 +122,7 @@ img{
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   text-align: center;
-  color: #222;
+  color: #fff;
 }
 
 .cards-container img {
@@ -125,7 +134,7 @@ img{
 
 .cards-container span {
   font-weight: bold;
-  color: #008c72;
+  color: var(--lucario-cream);
   text-align: center;
   display: block;
   margin-bottom: 0.5rem;
@@ -133,10 +142,11 @@ img{
 
 .cards-container p {
   font-size: 0.9rem;
-  color: #555;
+  color: #eee;
   text-align: justify;
   line-height: 1.4;
 }
+
 main.main-layout {
   display: flex;
   flex-wrap: wrap;
@@ -144,45 +154,81 @@ main.main-layout {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 1rem;
-  align-items: flex-start; /* Esto alinea las secciones arriba */
+  align-items: flex-start;
   box-sizing: border-box;
 }
 
-header nav {
+header {
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color:  rgb(224, 105, 199);
-  padding: 1rem 2rem;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  background-color: var(--lucario-black);; 
+  color: white;
+  padding: 0.5rem 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  position: relative; /* no cambia nada, pero aclaramos */
+  z-index: 1100; /* más alto que nav para que quede encima */
 }
 
-/* Estilo para la lista */
-header nav ul {
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column; /* Logo arriba, nav abajo */
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.logo {
+  display: flex;
   align-items: center;
+  gap: 0.5rem;
+}
+
+.logo img {
+  width: 50px;
+  height: auto;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffcc00; /* Amarillo tipo aura de Lucario */
+  margin: 0;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: var(--lucario-black);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px var(--lucario-shadow);
+  z-index: 1000; /* menos que header */
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-start; /* Menú a la izquierda */
   list-style: none;
   gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
-/* Estilo para los enlaces */
-header nav ul li a {
-  color: #fff;
+nav ul li a {
+  color: var(--lucario-cream);
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
 
-header nav ul li a:hover {
-  color: #ffcc00;
+nav ul li a:hover {
+  color: var(--lucario-red-eyes);
 }
+
 footer {
-  background-color: rgb(224, 105, 199);
-  color: #ffffff;
+  background-color: var(--lucario-black);
+  color: var(--lucario-cream);
   text-align: center;
   padding: 1rem 0;
   font-size: 0.9rem;
@@ -190,4 +236,3 @@ footer {
   bottom: 0;
   width: 100%;
 }
-
