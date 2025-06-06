@@ -1,5 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body{
     background-color: rgba(189, 235, 220, 0.884);
+    padding-top: 70px;
 }
 img{
     width: 10rem;
@@ -140,5 +146,48 @@ main.main-layout {
   padding: 1rem;
   align-items: flex-start; /* Esto alinea las secciones arriba */
   box-sizing: border-box;
+}
+
+header nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color:  rgb(224, 105, 199);
+  padding: 1rem 2rem;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para la lista */
+header nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  gap: 2rem;
+}
+
+/* Estilo para los enlaces */
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #ffcc00;
+}
+footer {
+  background-color: rgb(224, 105, 199);
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
